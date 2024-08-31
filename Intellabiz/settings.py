@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-umg8dbre$4q-&)dyd7nzei$wr2l9z-3kpeq&of)pe^iwm(vnws
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['intellabiz.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
