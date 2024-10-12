@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
-    <title>Home || AiWave- AI SaaS Website HTML5 UI Kit</title>
+    <title>Intellabiz - Create custom AI agent</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'agents/images/logo/favicon.png' %}">
     <!-- CSS ============================================ -->
@@ -27,7 +27,7 @@
 <body>
     <main class="page-wrapper">
         <!--..:: Start Header Top Area  ::..-->
-        <div class="header-top-news bg-image1">
+        <!-- <div class="header-top-news bg-image1">
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
@@ -52,7 +52,7 @@
                     <i class="fa-sharp fa-regular fa-x"></i>
                 </button>
             </div>
-        </div>
+        </div> -->
 
         <!--..:: End Header Top Area  ::..-->
 
@@ -63,7 +63,7 @@
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="logo">
                             <a href="index.php">
-                                <img class="logo-light" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                                <img class="logo-light" src="{% static  'agents/images/logo/logo.png' %}" alt="ChatBot Logo">
                             </a>
                         </div>
                     </div>
@@ -302,7 +302,7 @@
 
                                                 <div class="col-lg-3 single-mega-item">
                                                     <div class="header-menu-img">
-                                                        <img src="assets/images/menu-img/menu-img-2.png" alt="Menu Split Image">
+                                                        <img src="{% static 'agents/images/menu-img/menu-img-2.png' %}" alt="Menu Split Image">
                                                     </div>
                                                 </div>
                                             </div>
@@ -324,13 +324,15 @@
 
                     <div class="col-lg-2 col-md-6 col-6 position-static">
                         <div class="header-right">
-
+                    
                             <!-- Start Header Btn  -->
                             <div class="header-btn">
-                                <a class="rainbow-gradient-btn" target="_blank" href="text-generator.php"><span>Get Start</span></a>
+                                <a href="{% url 'get_started' %}" class="rainbow-gradient-btn">
+                                    <span>Get Started</span>
+                                </a>
                             </div>
                             <!-- End Header Btn  -->
-
+                    
                             <!-- Start Mobile-Menu-Bar -->
                             <div class="mobile-menu-bar ml--5 d-flex justify-content-end d-lg-none">
                                 <div class="hamberger">
@@ -353,7 +355,7 @@
                     <div class="header-top">
                         <div class="logo">
                             <a href="index.php">
-                                <img class="logo-light" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                                <img class="logo-light" src="{% static 'agents/images/logo/logo.png' %}" alt="ChatBot Logo">
                             </a>
                         </div>
                         <div class="close-menu">
@@ -596,7 +598,7 @@
 
                                             <div class="col-lg-3 single-mega-item">
                                                 <div class="header-menu-img">
-                                                    <img src="assets/images/menu-img/menu-img-2.png" alt="Menu Split Image">
+                                                    <img src="{% static 'agents/images/menu-img/menu-img-2.png' %}" alt="Menu Split Image">
                                                 </div>
                                             </div>
                                         </div>
@@ -617,15 +619,15 @@
                                 </ul>
                                 <div class="rbt-sm-separator"></div>
                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                    <li><a href="text-generator.php"><img src="assets/images/generator-icon/text.png" alt="AI Generator"><span>Text Generator</span></a></li>
-                                    <li><a href="image-generator.php"><img src="assets/images/generator-icon/photo.png" alt="AI Generator"><span>Image Generator</span>
+                                    <li><a href="text-generator.php"><img src="{% static 'agents/images/generator-icon/text.png' %}" alt="AI Generator"><span>Text Generator</span></a></li>
+                                    <li><a href="image-generator.php"><img src="{% static 'agents/images/generator-icon/photo.png' %}" alt="AI Generator"><span>Image Generator</span>
                                             <div class="rainbow-badge-card badge-sm ml--10">Hot</div>
                                         </a></li>
-                                    <li><a href="code-generator.php"><img src="assets/images/generator-icon/code-editor.png" alt="AI Generator"><span>Code Generator</span></a></li>
-                                    <li><a href="image-editor.php"><img src="assets/images/generator-icon/photo.png" alt="AI Generator"><span>Image Editor</span></a></li>
-                                    <li><a href="video-generator.php"><img src="assets/images/generator-icon/video-camera.png" alt="AI Generator"><span>Video Generator</span></a></li>
-                                    <li><a href="email-generator.php"><img src="assets/images/generator-icon/email.png" alt="AI Generator"><span>Email Generator</span></a></li>
-                                    <li><a tabindex="-1" class="disabled" aria-disabled="true" role="button"><img src="assets/images/generator-icon/website-design.png" alt="AI Generator"><span>Website Generator</span></a></li>
+                                    <li><a href="code-generator.php"><img src="{% static 'agents/images/generator-icon/code-editor.png' %}" alt="AI Generator"><span>Code Generator</span></a></li>
+                                    <li><a href="image-editor.php"><img src="{% static 'agents/images/generator-icon/photo.png' %}" alt="AI Generator"><span>Image Editor</span></a></li>
+                                    <li><a href="video-generator.php"><img src="{% static 'agents/images/generator-icon/video-camera.png' %}" alt="AI Generator"><span>Video Generator</span></a></li>
+                                    <li><a href="email-generator.php"><img src="{% static 'agents/images/generator-icon/email.png' %}" alt="AI Generator"><span>Email Generator</span></a></li>
+                                    <li><a tabindex="-1" class="disabled" aria-disabled="true" role="button"><img src="{% static 'agents/images/generator-icon/website-design.png' %}" alt="AI Generator"><span>Website Generator</span></a></li>
                                 </ul>
                             </nav>
 
@@ -710,40 +712,31 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="inner text-center mt--140">
-                            <h1 class="title display-one">Examine the Potential of
-                                <br> <span class="header-caption">
-                                    <span class="cd-headline rotate-1">
-                                        <span class="cd-words-wrapper" style="width: 221px;">
-                                            <b class="theme-gradient is-visible">AI Chating</b>
-                                            <b class="theme-gradient is-hidden">AI Writing</b>
-                                            <b class="theme-gradient is-hidden">AI Chating</b>
-                                        </span>
-                                </span>
-                                </span> AI Hack
+                            <h1 class="title display-one">Build Your Own AI Agent in minutes
                             </h1>
-                            <p class="description">Unleash Brainwave's AI potential. Use the open AI <br> conversation app Pixcels Themes</p>
+                            <p class="description">Automate like a developer using only natural language. No coding or drag and drop needed! </p>
                             <div class="form-group">
-                                <textarea name="text" id="slider-text-area" cols="30" rows="2" placeholder="Enter a prompt, for example: a fundraising deck to a mobile finance app called Intuitive"></textarea>
+                                <textarea name="text" id="slider-text-area" cols="30" rows="2" placeholder="Enter a process, for example: Automatically forwarding new emails from Gmail to a designated Slack channel."></textarea>
                                 <a class="btn-default @@btnClass" href="text-generator.php">Start with AI</a>
                             </div>
                             <div class="inner-shape">
-                                <img src="assets/images/bg/icon-shape/icon-shape-one.png" alt="Icon Shape" class="iconshape iconshape-one">
-                                <img src="assets/images/bg/icon-shape/icon-shape-two.png" alt="Icon Shape" class="iconshape iconshape-two">
-                                <img src="assets/images/bg/icon-shape/icon-shape-three.png" alt="Icon Shape" class="iconshape iconshape-three">
-                                <img src="assets/images/bg/icon-shape/icon-shape-four.png" alt="Icon Shape" class="iconshape iconshape-four">
+                                <img src="{% static 'agents/images/bg/icon-shape/icon-shape-one.png' %}" alt="Icon Shape" class="iconshape iconshape-one">
+                                <img src="{% static 'agents/images/bg/icon-shape/icon-shape-two.png' %}" alt="Icon Shape" class="iconshape iconshape-two">
+                                <img src="{% static 'agents/images/bg/icon-shape/icon-shape-three.png' %}" alt="Icon Shape" class="iconshape iconshape-three">
+                                <img src="{% static 'agents/images/bg/icon-shape/icon-shape-four.png' %}" alt="Icon Shape" class="iconshape iconshape-four">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-11 col-xl-11 justify-content-center">
                         <div class="slider-frame">
-                            <img class="slider-image-effect" src="assets/images/bg/slider-main-image.png" alt="Banner Images">
+                            <img class="slider-image-effect" src="{% static 'agents/images/bg/slider-main-image.png' %}" alt="Banner Images">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bg-shape">
-                <img class="bg-shape-one" src="assets/images/bg/bg-shape-four.png" alt="Bg Shape">
-                <img class="bg-shape-two" src="assets/images/bg/bg-shape-five.png" alt="Bg Shape">
+                <img class="bg-shape-one" src="{% static 'agents/images/bg/bg-shape-four.png' %}" alt="Bg Shape">
+                <img class="bg-shape-two" src="{% static 'agents/images/bg/bg-shape-five.png' %}" alt="Bg Shape">
             </div>
         </div>
         <!--..:: End Slider Area  ::..-->
@@ -761,18 +754,18 @@
                 <div class="row">
                     <div class="col-lg-12 mt--10">
                         <ul class="brand-list brand-style-2 slider-brand slider-brand-activation">
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/strapi.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/mapbox.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/stenciljs.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/spotify.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/woocommerce.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/slack.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/strapi.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/mapbox.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/stenciljs.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/spotify.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/woocommerce.png" alt="Brand Image"></a></li>
-                            <li class="slide-single-layout"><a href="#"><img src="assets/images/brand/slack.png" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/strapi.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/mapbox.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/stenciljs.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/spotify.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/woocommerce.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/slack.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/strapi.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/mapbox.png' ' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/stenciljs.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/spotify.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/woocommerce.png' %}" alt="Brand Image"></a></li>
+                            <li class="slide-single-layout"><a href="#"><img src="{% static 'agents/images/brand/slack.png' %}" alt="Brand Image"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -798,19 +791,19 @@
                         <div class="rainbow-default-tab style-three generator-tab-defalt">
                             <ul class="nav nav-tabs tab-button" role="tablist">
                                 <li class="nav-item tabs__tab " role="presentation">
-                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="video-generator-tab" data-bs-toggle="tab" data-bs-target="#video-generate" type="button" role="tab" aria-controls="video-generate" aria-selected="false"><span class="generator-icon"><img src="assets/images/icons/video-g.png" alt="Video Generator Icon">Video Generator</span><span class="border-bottom-style"></span></button>
+                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="video-generator-tab" data-bs-toggle="tab" data-bs-target="#video-generate" type="button" role="tab" aria-controls="video-generate" aria-selected="false"><span class="generator-icon"><img src="{% static 'agents/images/icons/video-g.png' %}" alt="Video Generator Icon">Video Generator</span><span class="border-bottom-style"></span></button>
                                 </li>
                                 <li class="nav-item tabs__tab" role="presentation">
-                                    <button class="nav-link rainbow-gradient-btn without-shape-circle active" id="audio-generator-tab" data-bs-toggle="tab" data-bs-target="#audio-generate" type="button" role="tab" aria-controls="audio-generate" aria-selected="true"><span class="generator-icon"><img src="assets/images/icons/audio-g.png" alt="Video Generator Icon">Audio Generator</span><span class="border-bottom-style"></span></button>
+                                    <button class="nav-link rainbow-gradient-btn without-shape-circle active" id="audio-generator-tab" data-bs-toggle="tab" data-bs-target="#audio-generate" type="button" role="tab" aria-controls="audio-generate" aria-selected="true"><span class="generator-icon"><img src="{% static 'agents/images/icons/audio-g.png' %}" alt="Video Generator Icon">Audio Generator</span><span class="border-bottom-style"></span></button>
                                 </li>
                                 <li class="nav-item tabs__tab " role="presentation">
-                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="photo-generator-tab" data-bs-toggle="tab" data-bs-target="#photo-generate" type="button" role="tab" aria-controls="photo-generate" aria-selected="false"><span class="generator-icon"><img src="assets/images/icons/photo-g.png" alt="Video Generator Icon">Photo Generator</span><span class="border-bottom-style"></span></button>
+                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="photo-generator-tab" data-bs-toggle="tab" data-bs-target="#photo-generate" type="button" role="tab" aria-controls="photo-generate" aria-selected="false"><span class="generator-icon"><img src="{% static 'agents/images/icons/photo-g.png' %}" alt="Video Generator Icon">Photo Generator</span><span class="border-bottom-style"></span></button>
                                 </li>
                                 <li class="nav-item tabs__tab " role="presentation">
-                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="text-generator-tab" data-bs-toggle="tab" data-bs-target="#text-generate" type="button" role="tab" aria-controls="text-generate" aria-selected="false"><span class="generator-icon"><img src="assets/images/icons/text-g.png" alt="Video Generator Icon">Text Generator</span><span class="border-bottom-style"></span></button>
+                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="text-generator-tab" data-bs-toggle="tab" data-bs-target="#text-generate" type="button" role="tab" aria-controls="text-generate" aria-selected="false"><span class="generator-icon"><img src="{% static 'agents/images/icons/text-g.png' %}" alt="Video Generator Icon">Text Generator</span><span class="border-bottom-style"></span></button>
                                 </li>
                                 <li class="nav-item tabs__tab " role="presentation">
-                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="code-generator-tab" data-bs-toggle="tab" data-bs-target="#code-generate" type="button" role="tab" aria-controls="code-generate" aria-selected="false"><span class="generator-icon"><img src="assets/images/icons/code-g.png" alt="Video Generator Icon">Code Generator</span><span class="border-bottom-style"></span></button>
+                                    <button class="nav-link rainbow-gradient-btn without-shape-circle" id="code-generator-tab" data-bs-toggle="tab" data-bs-target="#code-generate" type="button" role="tab" aria-controls="code-generate" aria-selected="false"><span class="generator-icon"><img src="{% static 'agents/images/icons/code-g.png' %}" alt="Video Generator Icon">Code Generator</span><span class="border-bottom-style"></span></button>
                                 </li>
                             </ul>
 
@@ -836,7 +829,7 @@
                                                 <div class="export-img">
                                                     <div class="inner-without-padding">
                                                         <div class="export-img img-bg-shape">
-                                                            <img src="assets/images/generator-img/chat-export-video.png" alt="Chat example Image">
+                                                            <img src="{% static 'agents/images/generator-img/chat-export-video.png' %}" alt="Chat example Image">
                                                             <div class="image-shape"></div>
                                                         </div>
                                                     </div>
@@ -867,7 +860,7 @@
                                                 <div class="export-img">
                                                     <div class="inner-without-padding">
                                                         <div class="export-img img-bg-shape">
-                                                            <img src="assets/images/generator-img/chat-export-audio.png" alt="Chat example Image">
+                                                            <img src="{% static 'agents/images/generator-img/chat-export-audio.png' %}" alt="Chat example Image">
                                                             <div class="image-shape"></div>
                                                         </div>
                                                     </div>
@@ -898,7 +891,7 @@
                                                 <div class="export-img">
                                                     <div class="inner-without-padding">
                                                         <div class="export-img img-bg-shape">
-                                                            <img src="assets/images/generator-img/chat-export-photo.png" alt="Chat example Image">
+                                                            <img src="{% static 'agents/images/generator-img/chat-export-photo.png'%}" alt="Chat example Image">
                                                             <div class="image-shape"></div>
                                                         </div>
                                                     </div>
@@ -929,7 +922,7 @@
                                                 <div class="export-img">
                                                     <div class="inner-without-padding">
                                                         <div class="export-img img-bg-shape">
-                                                            <img src="assets/images/generator-img/chat-export.png" alt="Chat example Image">
+                                                            <img src="{% static 'agents/images/generator-img/chat-export.png' %}" alt="Chat example Image">
                                                             <div class="image-shape"></div>
                                                         </div>
                                                     </div>
@@ -960,7 +953,7 @@
                                                 <div class="export-img">
                                                     <div class="inner-without-padding">
                                                         <div class="export-img img-bg-shape">
-                                                            <img src="assets/images/generator-img/chat-export-code.png" alt="Chat example Image">
+                                                            <img src="{% static 'agents/images/generator-img/chat-export-code.png' %}" alt="Chat example Image">
                                                             <div class="image-shape"></div>
                                                         </div>
                                                     </div>
@@ -1002,7 +995,7 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="assets/images/icons/service-icon-01.svg" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-01.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
                                             <h5 class="title">Ask anything</h5>
@@ -1011,8 +1004,8 @@
                                         </div>
                                     </div>
                                     <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1020,7 +1013,7 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="assets/images/icons/service-icon-02.svg" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-02.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
                                             <h5 class="title">Connect everywhere</h5>
@@ -1029,8 +1022,8 @@
                                         </div>
                                     </div>
                                     <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1038,7 +1031,7 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="assets/images/icons/service-icon-03.svg" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-03.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
                                             <h5 class="title">Fast responding</h5>
@@ -1047,8 +1040,8 @@
                                         </div>
                                     </div>
                                     <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1056,7 +1049,7 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="assets/images/icons/service-icon-01.svg" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-01.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
                                             <h5 class="title">Ask anything</h5>
@@ -1065,8 +1058,8 @@
                                         </div>
                                     </div>
                                     <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg.png'%}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-hover.png'%}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1074,7 +1067,7 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="assets/images/icons/service-icon-02.svg" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-02.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
                                             <h5 class="title">Connect everywhere</h5>
@@ -1083,8 +1076,8 @@
                                         </div>
                                     </div>
                                     <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1092,7 +1085,7 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="assets/images/icons/service-icon-03.svg" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-03.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
                                             <h5 class="title">Fast responding</h5>
@@ -1101,8 +1094,8 @@
                                         </div>
                                     </div>
                                     <div class="bg-shaped">
-                                        <img src="assets/images/service/bg.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1126,7 +1119,7 @@
                                             <div class="row g-0 radius-10 align-items-center">
                                                 <div class="col-lg-12 col-xl-5 col-12">
                                                     <div class="thumbnail">
-                                                        <img class="radius" src="assets/images/split/split-1.png" alt="split Images">
+                                                        <img class="radius" src="{% static 'agents/images/split/split-1.png' %}" alt="split Images">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-xl-7 col-12">
@@ -1151,7 +1144,7 @@
                                             <div class="row g-0 radius-10 align-items-center">
                                                 <div class="col-lg-12 col-xl-5 col-12">
                                                     <div class="thumbnail">
-                                                        <img class="radius" src="assets/images/split/split-4.png" alt="split Images">
+                                                        <img class="radius" src="{% static 'agents/images/split/split-4.png' %}" alt="split Images">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-xl-7 col-12">
@@ -1176,7 +1169,7 @@
                                             <div class="row g-0 radius-10 align-items-center">
                                                 <div class="col-lg-12 col-xl-5 col-12">
                                                     <div class="thumbnail">
-                                                        <img class="radius" src="assets/images/split/split-3.png" alt="split Images">
+                                                        <img class="radius" src="{% static 'agents/images/split/split-3.png' %}" alt="split Images">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-xl-7 col-12">
@@ -1201,7 +1194,7 @@
                                             <div class="row g-0 radius-10 align-items-center">
                                                 <div class="col-lg-12 col-xl-5 col-12">
                                                     <div class="thumbnail">
-                                                        <img class="radius" src="assets/images/split/split-5.png" alt="split Images">
+                                                        <img class="radius" src="{% static 'agents/images/split/split-5.png' %}" alt="split Images">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-xl-7 col-12">
@@ -1275,7 +1268,7 @@
                 </div>
             </div>
             <div class="bg-shape">
-                <img src="assets/images/bg/split-bg-shape.png" alt="Bg Shape">
+                <img src="{% static 'agents/images/bg/split-bg-shape.png' %}" alt="Bg Shape">
             </div>
         </div>
         <!--..:: End Advanced Tab Area ::..-->
@@ -1298,10 +1291,10 @@
                 <div class="row">
                     <div class="col-lg-12 mt--60">
                         <div class="collabration-image-section">
-                            <img src="assets/images/split/split-2.png" alt="collabration-image">
+                            <img src="{% static 'agents/images/split/split-2.png' %}" alt="collabration-image">
                             <div class="logo-section">
                                 <div class="center-logo">
-                                    <img src="assets/images/split/split-2-logo.png" alt="Small Logo">
+                                    <img src="{% static 'agents/images/split/split-2-logo.png' %}" alt="Small Logo">
                                 </div>
                             </div>
                         </div>
@@ -1328,14 +1321,14 @@
                         <div class="right-content">
                             <div class="call-to-btn text-start text-lg-end sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
                                 <div class="team-image">
-                                    <img src="assets/images/cta-img/team-01.png" alt="Group Image">
+                                    <img src="{% static 'agents/images/cta-img/team-01.png' %}" alt="Group Image">
                                 </div>
                                 <a class="btn-default" href="#">Join Now Today Free</a>
                             </div>
                         </div>
                     </div>
                     <div class="bg-shape">
-                        <img src="assets/images/cta-img/bg-shape-01.png" alt="BG Shape">
+                        <img src="{% static 'agents/images/cta-img/bg-shape-01.png' %}" alt="BG Shape">
                     </div>
                 </div>
             </div>
@@ -1381,10 +1374,11 @@
                                                 <div class="icon">
                                                     <i class="fa-regular fa-circle-radiation"></i>
                                                 </div>
-                                                <h4 class="title color-var-one">Basic</h4>
+                                                <h4 class="title color-var-one">Pay-as-you-go</h4>
                                                 <p class="subtitle">For large teams & corportaions</p>
                                                 <div class="pricing">
-                                                    <span class="price-text">Free</span>
+                                                    <span class="price-text">$0.02</span>
+                                                    <span class="text">/Credit</span>
                                                 </div>
                                             </div>
                                             <div class="pricing-body">
@@ -1487,7 +1481,7 @@
                                     <div class="feature-badge">Best Offer</div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
+                            <!-- <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
                                 <div class="rainbow-pricing style-aiwave">
                                     <div class="pricing-table-inner">
                                         <div class="pricing-top">
@@ -1549,7 +1543,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="tab-pane fade active show" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -1744,7 +1738,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-duration="700">
                         <div class="service service__style--1 aiwave-style text-center">
                             <div class="icon">
-                                <img src="assets/images/service/service-icon-01.png" alt="Servece Image">
+                                <img src="{% static 'agents/images/service/service-icon-01.png' %}" alt="Servece Image">
                             </div>
                             <div class="content">
                                 <h4 class="title w-600">100% No-Risk, Money Back Guarantee!</h4>
@@ -1756,7 +1750,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
                         <div class="service service__style--1 aiwave-style text-center">
                             <div class="icon">
-                                <img src="assets/images/service/service-icon-02.png" alt="Servece Image">
+                                <img src="{% static 'agents/images/service/service-icon-02.png' %}" alt="Servece Image">
                             </div>
                             <div class="content">
                                 <h4 class="title w-600">Upgrade or Cancel Anytime</h4>
@@ -1768,7 +1762,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-duration="700" data-sal-delay="200">
                         <div class="service service__style--1 aiwave-style text-center">
                             <div class="icon">
-                                <img src="assets/images/service/service-icon-03.png" alt="Servece Image">
+                                <img src="{% static 'agents/images/service/service-icon-03.png' %}" alt="Servece Image">
                             </div>
                             <div class="content">
                                 <h4 class="title w-600">Not sure yet, try the free version</h4>
@@ -1782,7 +1776,7 @@
 
 
         <!--..:: Start Testimonial Area  ::..-->
-        <div class="rainbow-testimonial-area rainbow-section-gap">
+        <!-- <div class="rainbow-testimonial-area rainbow-section-gap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -1828,7 +1822,7 @@
                                                     <p class="title-text">Guy Hawkins</p>
                                                     <p class="desc">Nursing Assistant</p>
                                                     <div class="desc-img">
-                                                        <img src="assets/images/brand/brand-t.png" alt="Brand Image">
+                                                        <img src="{% static 'agents/images/brand/brand-t.png' %}" alt="Brand Image">
                                                     </div>
                                                 </div>
                                                 <div class="meta-img-section">
@@ -1836,15 +1830,15 @@
                                                         <span><i class="fa-duotone fa-play"></i></span>
                                                     </a>
                                                     <a class="image" href="#">
-                                                        <img src="assets/images/team/team-02sm.jpg" alt="">
+                                                        <img src="{% static 'agents/images/team/team-02sm.jpg' %}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="bg-shape">
-                                        <img src="assets/images/service/bg-testimonial.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-testimonial-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg-testimonial.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-testimonial-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1875,7 +1869,7 @@
                                                     <p class="title-text">Guy Hawkins</p>
                                                     <p class="desc">Nursing Assistant</p>
                                                     <div class="desc-img">
-                                                        <img src="assets/images/brand/brand-t.png" alt="Brand Image">
+                                                        <img src="{% static 'agents/images/brand/brand-t.png' %}" alt="Brand Image">
                                                     </div>
                                                 </div>
                                                 <div class="meta-img-section">
@@ -1883,15 +1877,15 @@
                                                         <span><i class="fa-duotone fa-play"></i></span>
                                                     </a>
                                                     <a class="image" href="#">
-                                                        <img src="assets/images/team/team-02sm.jpg" alt="">
+                                                        <img src="{% static 'agents/images/team/team-02sm.jpg' %}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="bg-shape">
-                                        <img src="assets/images/service/bg-testimonial.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-testimonial-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg-testimonial.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-testimonial-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1922,7 +1916,7 @@
                                                     <p class="title-text">Guy Hawkins</p>
                                                     <p class="desc">Nursing Assistant</p>
                                                     <div class="desc-img">
-                                                        <img src="assets/images/brand/brand-t.png" alt="Brand Image">
+                                                        <img src="{% static 'agents/images/brand/brand-t.png '%}" alt="Brand Image">
                                                     </div>
                                                 </div>
                                                 <div class="meta-img-section">
@@ -1930,15 +1924,15 @@
                                                         <span><i class="fa-duotone fa-play"></i></span>
                                                     </a>
                                                     <a class="image" href="#">
-                                                        <img src="assets/images/team/team-02sm.jpg" alt="">
+                                                        <img src="{% static 'agents/images/team/team-02sm.jpg' %}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="bg-shape">
-                                        <img src="assets/images/service/bg-testimonial.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-testimonial-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg-testimonial.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-testimonial-hover.png'%}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -1969,7 +1963,7 @@
                                                     <p class="title-text">Guy Hawkins</p>
                                                     <p class="desc">Nursing Assistant</p>
                                                     <div class="desc-img">
-                                                        <img src="assets/images/brand/brand-t.png" alt="Brand Image">
+                                                        <img src="{% static 'agents/images/brand/brand-t.png' %}" alt="Brand Image">
                                                     </div>
                                                 </div>
                                                 <div class="meta-img-section">
@@ -1977,15 +1971,15 @@
                                                         <span><i class="fa-duotone fa-play"></i></span>
                                                     </a>
                                                     <a class="image" href="#">
-                                                        <img src="assets/images/team/team-02sm.jpg" alt="">
+                                                        <img src="{% static 'agents/images/team/team-02sm.jpg'%}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="bg-shape">
-                                        <img src="assets/images/service/bg-testimonial.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-testimonial-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg-testimonial.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-testimonial-hover.png'%}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -2016,7 +2010,7 @@
                                                     <p class="title-text">Guy Hawkins</p>
                                                     <p class="desc">Nursing Assistant</p>
                                                     <div class="desc-img">
-                                                        <img src="assets/images/brand/brand-t.png" alt="Brand Image">
+                                                        <img src="{% static 'agents/images/brand/brand-t.png'%}" alt="Brand Image">
                                                     </div>
                                                 </div>
                                                 <div class="meta-img-section">
@@ -2024,15 +2018,15 @@
                                                         <span><i class="fa-duotone fa-play"></i></span>
                                                     </a>
                                                     <a class="image" href="#">
-                                                        <img src="assets/images/team/team-02sm.jpg" alt="">
+                                                        <img src="{% static 'agents/images/team/team-02sm.jpg' %}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="bg-shape">
-                                        <img src="assets/images/service/bg-testimonial.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-testimonial-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg-testimonial.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-testimonial-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -2063,7 +2057,7 @@
                                                     <p class="title-text">Guy Hawkins</p>
                                                     <p class="desc">Nursing Assistant</p>
                                                     <div class="desc-img">
-                                                        <img src="assets/images/brand/brand-t.png" alt="Brand Image">
+                                                        <img src="{% static 'agents/images/brand/brand-t.png' %}" alt="Brand Image">
                                                     </div>
                                                 </div>
                                                 <div class="meta-img-section">
@@ -2071,15 +2065,15 @@
                                                         <span><i class="fa-duotone fa-play"></i></span>
                                                     </a>
                                                     <a class="image" href="#">
-                                                        <img src="assets/images/team/team-02sm.jpg" alt="">
+                                                        <img src="{% static 'agents/images/team/team-02sm.jpg' %}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="bg-shape">
-                                        <img src="assets/images/service/bg-testimonial.png" alt="" class="bg">
-                                        <img src="assets/images/service/bg-testimonial-hover.png" alt="" class="bg-hover">
+                                        <img src="{% static 'agents/images/service/bg-testimonial.png' %}" alt="" class="bg">
+                                        <img src="{% static 'agents/images/service/bg-testimonial-hover.png' %}" alt="" class="bg-hover">
                                     </div>
                                 </div>
                             </div>
@@ -2087,11 +2081,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--..:: End Testimonial Area  ::..-->
 
         <!--..:: Start Brand Area ::..-->
-        <div class="rainbow-brand-area rainbow-section-gap">
+        <!-- <div class="rainbow-brand-area rainbow-section-gap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -2120,21 +2114,21 @@
                 <div class="row">
                     <div class="col-lg-12 mt--10">
                         <ul class="brand-list brand-style-2">
-                            <li><a href="#"><img src="assets/images/brand/brand-01.png" alt="Brand Image"></a></li>
-                            <li><a href="#"><img src="assets/images/brand/brand-02.png" alt="Brand Image"></a></li>
-                            <li><a href="#"><img src="assets/images/brand/brand-03.png" alt="Brand Image"></a></li>
-                            <li><a href="#"><img src="assets/images/brand/brand-04.png" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="{% static 'agents/images/brand/brand-01.png' %}" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="{% static 'agents/images/brand/brand-02.png' %}" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="{% static 'agents/images/brand/brand-03.png' %}" alt="Brand Image"></a></li>
+                            <li><a href="#"><img src="{% static 'agents/images/brand/brand-04.png' %}" alt="Brand Image"></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="bg-shape-left">
-                <img src="assets/images/bg/bg-shape-two.png" alt="Bg shape">
+                <img src="{% static 'agents/images/bg/bg-shape-two.png' %}" alt="Bg shape">
             </div>
-        </div>
+        </div> -->
 
         <!--..:: Start CTA Area ::..-->
-        <div class="rainbow-cta-area rainbow-section-gap rainbow-section-gapBottom-big">
+        <!-- <div class="rainbow-cta-area rainbow-section-gap rainbow-section-gapBottom-big">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -2154,27 +2148,27 @@
                                     </div>
                                     <div class="app-store-btn">
                                         <a class="store-btn" href="#">
-                                            <img src="assets/images/cta-img/play-app.png" alt="Play Store Button">
+                                            <img src="{% static 'agents/images/cta-img/play-app.png' %}" alt="Play Store Button">
                                         </a>
                                         <a class="store-btn" href="#">
-                                            <img src="assets/images/cta-img/apple-app.png" alt="Apple Store Button">
+                                            <img src="{% static 'agents/images/cta-img/apple-app.png' %}" alt="Apple Store Button">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="content-right">
                                     <div class="img-right">
-                                        <img src="assets/images/cta-img/view-img.png" alt="Mobile View">
+                                        <img src="{% static 'agents/images/cta-img/view-img.png' %}" alt="Mobile View">
                                     </div>
                                 </div>
                                 <div class="bg-shape-one">
-                                    <img src="assets/images/cta-img/bg-shape.png" alt="Bg shape">
+                                    <img src="{% static 'agents/images/cta-img/bg-shape.png' %}" alt="Bg shape">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!--..:: Start Footer Area  ::..-->
         <footer class="rainbow-footer footer-style-default footer-style-3 position-relative">
@@ -2185,7 +2179,7 @@
                         <div class="rainbow-footer-widget">
                             <div class="logo">
                                 <a href="index.php">
-                                    <img class="logo-light" src="assets/images/logo/logo.png" alt="ChatBot Logo">
+                                    <img class="logo-light" src="{% static 'agents/images/logo/logo.png' %}" alt="ChatBot Logo">
                                 </a>
                             </div>
                             <p class="b1 desc-text">It has long been known that a reader's <br> attention will be diverted from </p>
@@ -2277,6 +2271,65 @@
             </div>
         </div>
     </div>
+    <div id="newchatModal" class="modal rbt-modal-box copy-modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content wrapper">
+                <div class="section-title text-center mb--30 sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
+                    <h3 class="title mb--0 w-600">Create a New Agent</h3>
+                </div>
+                <div class="genarator-section">
+                    <form id="createAgentForm" method="post">
+                        {% csrf_token %}
+                        <div class="form-group mb-4">
+                            <label for="agentName" class="form-label">Agent Name</label>
+                            <input type="text" id="agentName" name="agent_name" class="form-control" placeholder="Enter agent name" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="agentDescription" class="form-label">Agent Description</label>
+                            <textarea id="agentDescription" name="description" class="form-control" rows="4" placeholder="Enter agent description" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Create Agent</button>
+                        </div>
+                    </form>
+                </div>
+                <button class="close-button" data-bs-dismiss="modal">
+                    <i class="fa-sharp fa-regular fa-x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add JavaScript to handle form submission and redirection -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#createAgentForm').on('submit', function(e) {
+                e.preventDefault();  // Prevent the default form submission
+
+                $.ajax({
+                    url: "{% url 'create_agent' %}",
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.success) {
+                            // Redirect to the agent detail page using the agent_id from the response
+                            window.location.href = "/agent/" + response.agent_id + "/";
+                        } else if (response.errors) {
+                            // Handle form errors (e.g., validation)
+                            alert('There was an error creating the agent. Please try again.');
+                            console.log(response.errors);  // Optionally log errors to the console
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('An error occurred:', error);
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
         <!--..:: End Copy Right Area  ::..-->
 
         <!--..:: All Scripts  ::..-->
@@ -2299,4 +2352,6 @@
     <script src="{% static 'agents/js/vendor/jquery-one-page-nav.js' %}"></script>
     <!-- Main JS -->
     <script src="{% static 'agents/js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </html>

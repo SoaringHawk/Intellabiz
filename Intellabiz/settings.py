@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyATH1wdqRILhtV8urA2CSx8JZJa8QLh1lE')
+STRIPE_PUBLISHABLE_KEY = 'pk_live_51OkEwBLc6o39q8O0N2KpvY3ElR7vBWTJXMSDhnxLgGi9j6Jhv4kdYGBqVHMdmAm5YsrVDTGP81Ee2kMn62G14Kpt00Ft4ZGn7y'
+STRIPE_SECRET_KEY = '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'
 
 # Application definition
 
@@ -37,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'agents'
+    'agents',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +130,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
