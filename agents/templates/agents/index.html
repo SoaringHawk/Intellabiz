@@ -5,6 +5,15 @@
 
 
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-12G45PLHLB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-12G45PLHLB');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
@@ -23,6 +32,36 @@
     <link rel="stylesheet" href="{% static 'agents/css/plugins/prism.css' %}">
     <link rel="stylesheet" href="{% static 'agents/css/style.css' %}">
 </head>
+<style>
+    @media (max-width: 767.98px) {
+    .rainbow-pricing {
+        margin-bottom: 30px;
+    }
+
+    .pricing-table-inner {
+        width: 100%;
+    }
+
+    .row.justify-content-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.rainbow-pricing {
+    margin: 0 auto;
+}
+
+/* .pricing-footer a {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+} */
+
+
+
+</style>
 
 <body>
     <main class="page-wrapper">
@@ -62,7 +101,7 @@
                 <div class="row align-items-center row--0">
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="logo">
-                            <a href="index.php">
+                            <a href="{% url 'home' %}">
                                 <img class="logo-light" src="{% static  'agents/images/logo/logo.png' %}" alt="ChatBot Logo">
                             </a>
                         </div>
@@ -71,60 +110,12 @@
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu-nav d-none d-lg-flex justify-content-center">
                             <ul class="mainmenu">
-                                <li><a href="index.php">Home</a></li>
-                                <li class="has-dropdown has-menu-child-item position-relative"><a href="#">Tools <i class="fa-regular fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="text-generator.php">
-                                                <span>Text Generator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="image-generator.php">
-                                                <span>Image Generator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="code-generator.php">
-                                                <span>Code Generator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="image-editor.php">
-                                                <span>Image Editor</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="video-generator.php">
-                                                <span>Video Generator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="email-generator.php">
-                                                <span>Email Generator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a tabindex="-1" class="disabled" aria-disabled="true">
-                                                <span>Audio Generator</span>
-                                                <div class="rainbow-badge-card badge-sm ml--5">COMING</div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a tabindex="-1" class="disabled" aria-disabled="true">
-                                                <span>Edu. feedback</span>
-                                                <div class="rainbow-badge-card badge-sm ml--5">COMING</div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a tabindex="-1" class="disabled" aria-disabled="true">
-                                                <span>Website Generator</span>
-                                                <div class="rainbow-badge-card badge-sm ml--5">COMING</div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="with-megamenu has-menu-child-item"><a href="#">Pages <i class="fa-regular fa-chevron-down"></i></a>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="{% url 'home' %}">Blog</a></li>
+                                <li><a href="{% url 'home' %}">Faq</a></li>
+                                
+                                <!-- <li class="with-megamenu has-menu-child-item"><a href="#">Pages <i class="fa-regular fa-chevron-down"></i></a>
                                     <div class="rainbow-megamenu">
                                         <div class="wrapper">
                                             <div class="row row--0">
@@ -308,9 +299,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li><a href="roadmap.php">Roadmap</a></li>
-                                <li><a href="utilize.php">How to use</a></li>
+                                </li> -->
+                                
+                                <li><a href="#">How to use</a></li>
                             </ul>
 
 
@@ -742,7 +733,7 @@
         <!--..:: End Slider Area  ::..-->
 
         <!--..:: Start Brand Area ::..-->
-        <div class="rainbow-brand-area rainbow-section-gap">
+        <!-- <div class="rainbow-brand-area rainbow-section-gap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -770,18 +761,18 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!--..:: Start Tab__Style--one Area  ::..-->
-        <div class="rainbow-service-area rainbow-section-gap">
+        <!-- <div class="rainbow-service-area rainbow-section-gap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center pb--60" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
                             <h4 class="subtitle">
-                                <span class="theme-gradient">RAINBOW UNLOCKS THE POTENTIAL ai</span>
+                                <span class="theme-gradient">UNLOCK THE POTENTIAL OF AI</span>
                             </h4>
-                            <h2 class="title mb--0">Generative AI made for <br> creators.</h2>
+                            <h2 class="title mb--0">AI-Powered Tools for Modern Automation.</h2>
                         </div>
                     </div>
                 </div>
@@ -967,7 +958,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--..:: End Tab__Style--one Area  ::..-->
 
 
@@ -981,7 +972,7 @@
                                 <span class="theme-gradient">Assisting individuals</span>
                             </h4>
                             <h2 class="title mb--60">
-                                Chat Smarter, Not <br> Harder with
+                                Work Smarter, Not <br> Harder with
                             </h2>
                         </div>
                     </div>
@@ -998,8 +989,8 @@
                                             <img src="{% static 'agents/images/icons/service-icon-01.svg' %}" alt="Servece Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Ask anything</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+                                            <h5 class="title">Code generation</h5>
+                                            <p class="desc">Let our AI handle the hard work. Simply describe your process, and we’ll take care of the rest.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
                                     </div>
@@ -1013,11 +1004,11 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="{% static 'agents/images/icons/service-icon-02.svg' %}" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-02.svg' %}" alt="Service Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Connect everywhere</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+                                            <h5 class="title">Complex Scheduling</h5>
+                                            <p class="desc">Empower agents to execute tasks with precise timing, ensuring smooth and timely automation of critical processes.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
                                     </div>
@@ -1031,11 +1022,11 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="{% static 'agents/images/icons/service-icon-03.svg' %}" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-03.svg' %}" alt="Service Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Fast responding</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+                                            <h5 class="title">Fast Agent Creation</h5>
+                                            <p class="desc">Quickly generate AI agents by chatting with our bot. Unlike traditional no-code builders, our platform writes the code for you, offering more flexibility and control.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
                                     </div>
@@ -1049,11 +1040,11 @@
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="{% static 'agents/images/icons/service-icon-01.svg' %}" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-01.svg' %}" alt="Service Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Ask anything</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+                                            <h5 class="title">Flexible AI Agent Building</h5>
+                                            <p class="desc">Interact with our bot to build custom AI agents, gaining developer-like control over your automation, without the constraints of typical no-code platforms.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
                                     </div>
@@ -1063,15 +1054,16 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="slide-single-layout">
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="{% static 'agents/images/icons/service-icon-02.svg' %}" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-02.svg' %}" alt="Service Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Connect everywhere</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+                                            <h5 class="title">Seamless Integration</h5>
+                                            <p class="desc">Connect your AI agents with any platform or workflow, offering the same level of flexibility and precision as a developer’s automation, without the need for deep technical knowledge.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
                                     </div>
@@ -1081,15 +1073,16 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="slide-single-layout">
                                 <div class="rainbow-box-card card-style-default aiwave-service-default has-bg-shaped">
                                     <div class="inner">
                                         <div class="icon">
-                                            <img src="{% static 'agents/images/icons/service-icon-03.svg' %}" alt="Servece Icon">
+                                            <img src="{% static 'agents/images/icons/service-icon-03.svg' %}" alt="Service Icon">
                                         </div>
                                         <div class="description centered-shape">
-                                            <h5 class="title">Fast responding</h5>
-                                            <p class="desc">Lets users quickly find answers to their questions without having to search through multiple sources.</p>
+                                            <h5 class="title">Fast Responding Agents</h5>
+                                            <p class="desc">Build AI agents that respond quickly and efficiently, leveraging the power of LLM to automate tasks just like a developer would – fast, smart, and flexible.</p>
                                             <a class="read-more-btn" href="#">Explore More <span><i class="fa-sharp fa-solid fa-arrow-right"></i></span></a>
                                         </div>
                                     </div>
@@ -1099,6 +1092,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -1125,10 +1119,10 @@
                                                 <div class="col-lg-12 col-xl-7 col-12">
                                                     <div class="split-inner">
                                                         <div class="subtitle">
-                                                            <span class="theme-gradient">How it work</span>
+                                                            <span class="theme-gradient">How It Works</span>
                                                         </div>
-                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Connect with Al chatbot</h2>
-                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Dentify the platform or interface through which you can access the chatbot. This could be a website, a messaging app, or a dedicated application.</p>
+                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Automate Actions on Any Website</h2>
+                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Easily automate actions on any website, from form submissions to button clicks, by generating the code through our LLM-based system. Gain full control over automations without needing to write the code yourself.</p>
                                                         <div class="view-more-button mt--35 sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
                                                             <a class="btn-default color-blacked" href="contact.php">Try It Now <i class="fa-sharp fa-light fa-arrow-right ml--5"></i></a>
                                                         </div>
@@ -1150,10 +1144,10 @@
                                                 <div class="col-lg-12 col-xl-7 col-12">
                                                     <div class="split-inner">
                                                         <div class="subtitle">
-                                                            <span class="theme-gradient">Exploring Efficiency</span>
+                                                            <span class="theme-gradient">Automating Data</span>
                                                         </div>
-                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Streamline Your Workflow</h2>
-                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Discover tools and techniques to optimize your workflow, making your tasks more efficient and manageable.</p>
+                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Data Scraping Made Simple</h2>
+                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Easily extract and gather data from websites with precision. Automate the entire process, from scraping data points to organizing and exporting it in a format that suits your needs.</p>
                                                         <div class="view-more-button mt--35 sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
                                                             <a class="btn-default color-blacked" href="contact.php">Try It Now <i class="fa-sharp fa-light fa-arrow-right ml--5"></i></a>
                                                         </div>
@@ -1175,10 +1169,10 @@
                                                 <div class="col-lg-12 col-xl-7 col-12">
                                                     <div class="split-inner">
                                                         <div class="subtitle">
-                                                            <span class="theme-gradient">Navigating Cybersecurity</span>
+                                                            <span class="theme-gradient">API Integration</span>
                                                         </div>
-                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Protecting Your Digital Presence</h2>
-                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Gain insights into cybersecurity measures and strategies to safeguard your online identity and sensitive information.</p>
+                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Automate with APIs</h2>
+                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Automate tasks across different platforms by integrating with APIs. Create and manage workflows without the hassle of manual coding, all through our AI-driven agent creation platform.</p>
                                                         <div class="view-more-button mt--35 sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
                                                             <a class="btn-default color-blacked" href="contact.php">Try It Now <i class="fa-sharp fa-light fa-arrow-right ml--5"></i></a>
                                                         </div>
@@ -1200,10 +1194,10 @@
                                                 <div class="col-lg-12 col-xl-7 col-12">
                                                     <div class="split-inner">
                                                         <div class="subtitle">
-                                                            <span class="theme-gradient">Mastering Data Analysis</span>
+                                                            <span class="theme-gradient">Boost Your E-commerce</span>
                                                         </div>
-                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Demystifying Data Analytics</h2>
-                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Learn the fundamentals of data analysis, including tools and methodologies, to extract meaningful insights from raw data.</p>
+                                                        <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">E-commerce Automation</h2>
+                                                        <p class="description sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Automate routine e-commerce tasks, such as inventory management, price updates, and order tracking. Our AI agents handle these processes seamlessly, freeing up your time to focus on growth.</p>
                                                         <div class="view-more-button mt--35 sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
                                                             <a class="btn-default color-blacked" href="contact.php">Try It Now <i class="fa-sharp fa-light fa-arrow-right ml--5"></i></a>
                                                         </div>
@@ -1213,6 +1207,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                
                             </div>
                         </div>
                         <div class="col-lg-12 mt--60">
@@ -1225,7 +1221,7 @@
                                                 <div class="count-text">
                                                     <span class="theme-gradient">01</span>
                                                 </div>
-                                                <h4 class="title">Connect with AI </h4>
+                                                <h4 class="title">Automation </h4>
                                             </div>
                                         </a>
                                     </li>
@@ -1236,7 +1232,7 @@
                                                 <div class="count-text">
                                                     <span class="theme-gradient">02</span>
                                                 </div>
-                                                <h4 class="title">Streamline Workflow</h4>
+                                                <h4 class="title">Data scraping</h4>
                                             </div>
                                         </a>
                                     </li>
@@ -1247,7 +1243,7 @@
                                                 <div class="count-text">
                                                     <span class="theme-gradient">03</span>
                                                 </div>
-                                                <h4 class="title">Cybersecurity</h4>
+                                                <h4 class="title">API integration</h4>
                                             </div>
                                         </a>
                                     </li>
@@ -1257,7 +1253,7 @@
                                                 <div class="count-text">
                                                     <span class="theme-gradient">04</span>
                                                 </div>
-                                                <h4 class="title">Data Analysis</h4>
+                                                <h4 class="title">Automate E-commerce</h4>
                                             </div>
                                         </a>
                                     </li>
@@ -1312,8 +1308,10 @@
                     <div class="col-lg-8">
                         <div class="inner">
                             <div class="content text-left">
-                                <h4 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Join our aI Experts community</h4>
-                                <p class="sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">Meet and learn from 80+ creators & companies who share how thay use AI to create better content at lightning speed.</p>
+                                <h4 class="title sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">Join Our AI Experts Discord Community</h4>
+                                <p class="sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">
+                                    Connect with 80+ professionals & businesses leveraging AI agents to automate workflows, streamline operations, and boost productivity. Get exclusive insights and tips to maximize efficiency and scale your success.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1321,22 +1319,23 @@
                         <div class="right-content">
                             <div class="call-to-btn text-start text-lg-end sal-animate" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
                                 <div class="team-image">
-                                    <img src="{% static 'agents/images/cta-img/team-01.png' %}" alt="Group Image">
+                                    <img src="{% static 'agents/images/cta-img/team-01.png' %}" alt="Community Image">
                                 </div>
-                                <a class="btn-default" href="#">Join Now Today Free</a>
+                                <a class="btn-default" href="https://discord.gg/yourdiscordlink" target="_blank">Join Our Discord </a>
                             </div>
                         </div>
                     </div>
                     <div class="bg-shape">
-                        <img src="{% static 'agents/images/cta-img/bg-shape-01.png' %}" alt="BG Shape">
+                        <img src="{% static 'agents/images/cta-img/bg-shape-01.png' %}" alt="Background Shape">
                     </div>
                 </div>
             </div>
         </div>
+        
         <!--..:: End CTA Style-one Area  ::..-->
 
         <!--..:: Pricing Part ::..-->
-        <div class="aiwave-pricing-area wrapper rainbow-section-gap-big">
+        <div id="pricing" class="aiwave-pricing-area wrapper rainbow-section-gap-big">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -1348,207 +1347,13 @@
                                 Pricing plans for everyone
                             </h2>
                         </div>
-
-                        <nav class="aiwave-tab">
-                            <div class="tab-btn-grp nav nav-tabs text-center justify-content-center" id="nav-tab" role="tablist">
-                                <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="false">
-                                    Monthly
-                                </button>
-                                <button class="nav-link with-badge active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">
-                                    Yearly
-                                    <span class="rainbow-badge-card badge-border"
-                            >-10%</span>
-                                </button>
-                            </div>
-                        </nav>
                     </div>
                 </div>
                 <div class="tab-content p-0 bg-transparent border-0 border bg-light" id="nav-tabContent">
-                    <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="row row--15 mt_dec--40">
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
-                                <div class="rainbow-pricing style-aiwave">
-                                    <div class="pricing-table-inner">
-                                        <div class="pricing-top">
-                                            <div class="pricing-header">
-                                                <div class="icon">
-                                                    <i class="fa-regular fa-circle-radiation"></i>
-                                                </div>
-                                                <h4 class="title color-var-one">Pay-as-you-go</h4>
-                                                <p class="subtitle">For large teams & corportaions</p>
-                                                <div class="pricing">
-                                                    <span class="price-text">$0.02</span>
-                                                    <span class="text">/Credit</span>
-                                                </div>
-                                            </div>
-                                            <div class="pricing-body">
-                                                <div class="features-section">
-                                                    <h6>Features</h6>
-                                                    <ul class="list-style--1">
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 7,700
-                                                            3-5 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> AI Blog
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> Advance
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pricing-footer">
-                                            <a class="btn-default btn-border" href="#">Get Started</a>
-                                            <p class="bottom-text">Limited Offer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
-                                <div class="rainbow-pricing style-aiwave active">
-                                    <div class="pricing-table-inner">
-                                        <div class="pricing-top">
-                                            <div class="pricing-header">
-                                                <div class="icon">
-                                                    <i class="fa-sharp fa-regular fa-flower"></i>
-                                                </div>
-                                                <h4 class="title color-var-two">Premium</h4>
-                                                <p class="subtitle">For large teams & corportaions</p>
-                                                <div class="pricing">
-                                                    <span class="price-text">$60.50</span>
-                                                    <span class="text">/Per Month</span>
-
-                                                </div>
-                                            </div>
-                                            <div class="pricing-body">
-                                                <div class="features-section has-show-more">
-                                                    <h6>Features</h6>
-                                                    <ul class="list-style--1 has-show-more-inner-content">
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 12,700
-                                                            7-9 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 7,700
-                                                            3-5 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> AI Blog
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> Advance
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                    </ul>
-                                                    <div class="rbt-show-more-btn">Show More</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pricing-footer">
-                                            <a class="btn-default color-blacked" href="#">Get Started</a>
-                                            <p class="bottom-text">Limited Offer</p>
-                                        </div>
-                                    </div>
-                                    <div class="feature-badge">Best Offer</div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
-                                <div class="rainbow-pricing style-aiwave">
-                                    <div class="pricing-table-inner">
-                                        <div class="pricing-top">
-                                            <div class="pricing-header">
-                                                <div class="icon">
-                                                    <i class="fa-sharp fa-regular fa-waveform-lines"></i>
-                                                </div>
-                                                <h4 class="title color-var-three">Enterprise</h4>
-                                                <p class="subtitle">For large teams & corportaions</p>
-                                                <div class="pricing">
-                                                    <span class="price-text">$80.50</span>
-                                                    <span class="text">/Per Month</span>
-                                                </div>
-                                            </div>
-                                            <div class="pricing-body">
-                                                <div class="features-section has-show-more">
-                                                    <h6>Features</h6>
-                                                    <ul class="list-style--1 has-show-more-inner-content">
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 15,700
-                                                            15-30 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 7,700
-                                                            3-5 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> AI Blog
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> Advance
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                    </ul>
-                                                    <div class="rbt-show-more-btn">Show More</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pricing-footer">
-                                            <a class="btn-default btn-border" href="#">Get Started</a>
-                                            <p class="bottom-text">Limited Offer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
                     <div class="tab-pane fade active show" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <div class="row row--15 mt_dec--40">
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
+                        <div class="row justify-content-center g-0 mt_dec--40 text-center">
+                            <!-- Basic Plan -->
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 d-flex justify-content-center mt--40">
                                 <div class="rainbow-pricing style-aiwave">
                                     <div class="pricing-table-inner">
                                         <div class="pricing-top">
@@ -1557,9 +1362,10 @@
                                                     <i class="fa-regular fa-circle-radiation"></i>
                                                 </div>
                                                 <h4 class="title color-var-one">Basic</h4>
-                                                <p class="subtitle">For large teams & corportaions</p>
+                                                <p class="subtitle">For individuals and small teams</p>
                                                 <div class="pricing">
-                                                    <span class="price-text">Free</span>
+                                                    <span class="price-text">$0.02</span>
+                                                    <span class="text">/Per Hour</span>
                                                 </div>
                                             </div>
                                             <div class="pricing-body">
@@ -1567,102 +1373,30 @@
                                                     <h6>Features</h6>
                                                     <ul class="list-style--1">
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 7,700
-                                                            3-5 day turnarouord
+                                                            <i class="fa-regular fa-circle-check"></i> Basic Workflow Automation
                                                         </li>
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
+                                                            <i class="fa-regular fa-circle-check"></i> 24/7 Support
                                                         </li>
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
+                                                            <i class="fa-regular fa-circle-check"></i> Access to AI Agents Marketplace
                                                         </li>
                                                         <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> AI Blog
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> Advance
-                                                            Updates via dashboard & slack
+                                                            <i class="fa-regular fa-circle-check"></i> Dashboard & Slack Notifications
                                                         </li>
                                                     </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pricing-footer">
-                                            <a class="btn-default btn-border" href="#">Get Started</a>
-                                            <p class="bottom-text">Limited Offer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
-                                <div class="rainbow-pricing style-aiwave active">
-                                    <div class="pricing-table-inner">
-                                        <div class="pricing-top">
-                                            <div class="pricing-header">
-                                                <div class="icon">
-                                                    <i class="fa-sharp fa-regular fa-flower"></i>
-                                                </div>
-                                                <h4 class="title color-var-two">Premium</h4>
-                                                <p class="subtitle">For large teams & corportaions</p>
-                                                <div class="pricing">
-                                                    <span class="price-text">$499.00</span>
-                                                    <span class="text">/Per Year</span>
-
-                                                </div>
-                                            </div>
-                                            <div class="pricing-body">
-                                                <div class="features-section has-show-more">
-                                                    <h6>Features</h6>
-                                                    <ul class="list-style--1 has-show-more-inner-content">
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 12,700
-                                                            7-9 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 7,700
-                                                            3-5 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> AI Blog
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> Advance
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                    </ul>
-                                                    <div class="rbt-show-more-btn">Show More</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="pricing-footer">
                                             <a class="btn-default color-blacked" href="#">Get Started</a>
-                                            <p class="bottom-text">Limited Offer</p>
+                                            <p class="bottom-text">Flexible Pricing, Pay as You Go</p>
                                         </div>
                                     </div>
-                                    <div class="feature-badge">Best Offer</div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt--40">
+                            <!-- Enterprise Plan -->
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 d-flex justify-content-center mt--40">
                                 <div class="rainbow-pricing style-aiwave">
                                     <div class="pricing-table-inner">
                                         <div class="pricing-top">
@@ -1671,56 +1405,34 @@
                                                     <i class="fa-sharp fa-regular fa-waveform-lines"></i>
                                                 </div>
                                                 <h4 class="title color-var-three">Enterprise</h4>
-                                                <p class="subtitle">For large teams & corportaions</p>
+                                                <p class="subtitle">For large teams & corporations</p>
                                                 <div class="pricing">
-                                                    <span class="price-text">$599.00</span>
-                                                    <span class="text">/Per Year</span>
+                                                    <span class="price-text">Custom</span>
                                                 </div>
                                             </div>
                                             <div class="pricing-body">
-                                                <div class="features-section has-show-more">
+                                                <div class="features-section">
                                                     <h6>Features</h6>
-                                                    <ul class="list-style--1 has-show-more-inner-content">
+                                                    <ul class="list-style--1">
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 15,700
-                                                            15-30 day turnarouord
+                                                            <i class="fa-regular fa-circle-check"></i> Custom AI Workflow Solutions
                                                         </li>
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
+                                                            <i class="fa-regular fa-circle-check"></i> Dedicated Account Manager
                                                         </li>
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
+                                                            <i class="fa-regular fa-circle-check"></i> Advanced Reporting & Analytics
                                                         </li>
                                                         <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 7,700
-                                                            3-5 day turnarouord
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 6+
-                                                            Naive development
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-regular fa-circle-check"></i> 5+
-                                                            Task delivered one-by-one
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> AI Blog
-                                                            Updates via dashboard & slack
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa-sharp fa-regular fa-minus-circle"></i> Advance
-                                                            Updates via dashboard & slack
+                                                            <i class="fa-regular fa-circle-check"></i> Priority Support
                                                         </li>
                                                     </ul>
-                                                    <div class="rbt-show-more-btn">Show More</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="pricing-footer">
-                                            <a class="btn-default btn-border" href="#">Get Started</a>
-                                            <p class="bottom-text">Limited Offer</p>
+                                            <a class="btn-default color-blacked" href="#">Contact Sales</a>
+                                            <p class="bottom-text">Customizable Solutions for Large Teams</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1730,6 +1442,10 @@
                 </div>
             </div>
         </div>
+        
+        
+        
+        
 
         <!--..:: Service Area ::..-->
         <div class="aiwave-service-area rainbow-section-gap">
@@ -1741,38 +1457,39 @@
                                 <img src="{% static 'agents/images/service/service-icon-01.png' %}" alt="Servece Image">
                             </div>
                             <div class="content">
-                                <h4 class="title w-600">100% No-Risk, Money Back Guarantee!</h4>
-                                <p class="description b1 mb--0">Refunds will be issued within period of 14 days from the purchase date</p>
+                                <h4 class="title w-600">Transparent Pricing</h4>
+                                <p class="description b1 mb--0">No hidden fees. Know exactly what you pay for.</p>
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
                         <div class="service service__style--1 aiwave-style text-center">
                             <div class="icon">
                                 <img src="{% static 'agents/images/service/service-icon-02.png' %}" alt="Servece Image">
                             </div>
                             <div class="content">
-                                <h4 class="title w-600">Upgrade or Cancel Anytime</h4>
-                                <p class="description b1 mb--0">Passages there are many variations variations of of Lorem Ipsum available.</p>
+                                <h4 class="title w-600">Pay-as-You-Go</h4>
+                                <p class="description b1 mb--0">Purchase tokens to access features as needed, ensuring flexibility in your spending.</p>
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-duration="700" data-sal-delay="200">
                         <div class="service service__style--1 aiwave-style text-center">
                             <div class="icon">
                                 <img src="{% static 'agents/images/service/service-icon-03.png' %}" alt="Servece Image">
                             </div>
                             <div class="content">
-                                <h4 class="title w-600">Not sure yet, try the free version</h4>
-                                <p class="description b1 mb--0">Refunds will be issued within period of 14 days from the purchase date</p>
+                                <h4 class="title w-600">Explore Free Features</h4>
+                                <p class="description b1 mb--0">Experience our core features with no obligation.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 
 
         <!--..:: Start Testimonial Area  ::..-->
@@ -2265,7 +1982,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-12 col-12">
                     <div class="copyright-right text-center text-lg-end">
-                        <p class="copyright-text">Copyright © 2024 <a href="https://themeforest.net/user/pixcelsthemes" class="btn-read-more"><span>Pixcels-Themes.</span></a></p>
+                        <p class="copyright-text">Copyright © 2024 <span>Intellabiz.</span></p>
                     </div>
                 </div>
             </div>

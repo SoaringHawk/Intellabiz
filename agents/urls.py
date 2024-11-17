@@ -13,8 +13,11 @@ urlpatterns = [
     path('start_workflow/<int:agent_id>/', views.start_workflow, name='start_workflow'),
     path('stop_workflow/<int:agent_id>/', views.stop_workflow, name='stop_workflow'),
     path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
-    path('success/', views.success_view, name='success'),
-    path('cancel/', views.cancel_view, name='cancel'),
+    # path('success/', views.success_view, name='success'),
+    # path('cancel/', views.cancel_view, name='cancel'),
     path('buy-token/', views.buy_token, name='buy_token'),
-    
+    path('api/get-agent-history/', views.get_agent_history, name='get_agent_history'),
+    path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
+    path('subscription/success/', views.subscription_success, name='subscription_success'),
+    path('subscription/cancel/', views.cancel_view, name='cancel_view'),
 ]
