@@ -61,5 +61,5 @@ jobs:
           EOF
 
       # Cleanup: Remove SSH Key
-      - name: Remove SSH Key
-        run: rm -f ~/.ssh/id_rsa
+      # - name: Remove SSH Key
+      #   run: rm -f ~/.ssh/id_rsa
