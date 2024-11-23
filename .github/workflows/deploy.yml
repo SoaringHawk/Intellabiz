@@ -3,7 +3,7 @@ name: Django CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Trigger the workflow on pushes to the main branch
+      - master  # Trigger the workflow on pushes to the main branch
 
 jobs:
   deploy:
