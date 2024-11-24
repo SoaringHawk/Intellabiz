@@ -31,7 +31,11 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def home(request):
-    return render(request, 'agents/index.html')
+    context = {
+        'MEDIA_URL': settings.MEDIA_URL,
+        # other context variables
+    }
+    return render(request, 'agents/index.html', context)
 
 @login_required(login_url='log_in')
 def get_started(request):

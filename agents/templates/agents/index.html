@@ -20,7 +20,7 @@
 
     <title>Intellabiz - Create custom AI agent</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'agents/images/logo/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}images/logo/favicon.png ">
     <!-- CSS ============================================ -->
     <link rel="stylesheet" href="{% static 'agents/css/vendor/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'agents/css/plugins/fontawesome-all.min.css' %}">
@@ -347,7 +347,7 @@
                     <div class="header-top">
                         <div class="logo">
                             <a href="index.php">
-                                <img class="logo-light" src="{% static 'agents/images/logo/logo.png' %}" alt="ChatBot Logo">
+                                <img class="logo-light" src="{{ MEDIA_URL }}images/logo/logo.png " alt="ChatBot Logo">
                             </a>
                         </div>
                         <div class="close-menu">

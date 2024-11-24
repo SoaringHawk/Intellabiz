@@ -126,8 +126,11 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFileStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# Directory where media files will be stored on the server
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# URL that will serve the media files (access path)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
