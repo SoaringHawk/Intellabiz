@@ -9944,7 +9944,7 @@ xclip
   bottom: auto;
   z-index: -1;
   border-radius: 1000px;
-  background-image: url(../images/bg/bg-shape-one.png);
+  background-image: url(..../Images/bg/bg-shape-one.png);
   opacity: 0.25;
   filter: blur(100px);
 }
@@ -10260,7 +10260,7 @@ xclip
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/bg/nav-bg-shape.svg);
+  background: url(..../Images/bg/nav-bg-shape.svg);
   width: 0;
   height: 100%;
   background-size: cover;
@@ -11086,7 +11086,7 @@ div.btn-default.bg-shaped::after {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(../images/bg/bg-shaped-btn.svg);
+  background: url(..../Images/bg/bg-shaped-btn.svg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0;
@@ -14946,7 +14946,7 @@ span.rainbow-demo-btn {
   position: relative;
 }
 .aiwave-cta .inner {
-  background: url(../images/cta-img/bg-img-01.png);
+  background: url(../Images/cta-img/bg-img-01.png);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -15421,7 +15421,7 @@ img {
   transform: translate(-50%);
   height: 100%;
   width: 100%;
-  background: url(../images/bg/tab-bg-shape.png);
+  background: url(..../Images/bg/tab-bg-shape.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16460,7 +16460,7 @@ img.mfp-img {
   align-items: center;
   font-size: var(--font-size-b2);
   line-height: var(--line-height-b2);
-  background: url(../images/tab/tab-bg-shape.png);
+  background: url(..../Images/tab/tab-bg-shape.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19076,7 +19076,7 @@ iframe {
   top: -40%;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../images/bg/main-banner-bg-shape.png);
+  background: url(..../Images/bg/main-banner-bg-shape.png);
   z-index: -5;
 }
 .slider-style-1.variation-2 {
@@ -19701,50 +19701,50 @@ iframe {
   background-position: center center;
 }
 .slider-bg-image.bg-image-1 {
-  background-image: url(../images/bg/bg-image-1.jpg);
+  background-image: url(..../Images/bg/bg-image-1.jpg);
 }
 .slider-bg-image.bg-image2 {
-  background-image: url(../images/call-to-action/bg-image-1.jpg);
+  background-image: url(..../Images/call-to-action/bg-image-1.jpg);
 }
 .slider-bg-image.bg-image3 {
-  background-image: url(../images/slider-bg/bg-image-3.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-3.jpg);
 }
 .slider-bg-image.bg-image4 {
-  background-image: url(../images/bg-video/bg-image-4.jpg);
+  background-image: url(..../Images/bg-video/bg-image-4.jpg);
 }
 .slider-bg-image.bg-image5 {
-  background-image: url(../images/slider-bg/bg-image-4.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-4.jpg);
 }
 .slider-bg-image.bg-image5 {
-  background-image: url(../images/slider-bg/bg-image-5.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-5.jpg);
 }
 .slider-bg-image.bg-image6 {
-  background-image: url(../images/slider-bg/bg-image-6.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-6.jpg);
 }
 .slider-bg-image.bg-image10 {
-  background-image: url(../images/bg/bg-image-10.jpg);
+  background-image: url(..../Images/bg/bg-image-10.jpg);
 }
 .slider-bg-image.bg-image11 {
-  background-image: url(../images/bg/bg-image-11.jpg);
+  background-image: url(..../Images/bg/bg-image-11.jpg);
 }
 .slider-bg-image.bg-image13 {
-  background-image: url(../images/slider-bg/bg-image-13.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-13.jpg);
 }
 .slider-bg-image.bg-image14 {
-  background-image: url(../images/slider-bg/bg-image-14.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-14.jpg);
 }
 .slider-bg-image.bg-image15 {
-  background-image: url(../images/slider-bg/bg-image-15.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-15.jpg);
 }
 .slider-bg-image.bg-image16 {
-  background-image: url(../images/slider-bg/bg-image-16.jpg);
+  background-image: url(..../Images/slider-bg/bg-image-16.jpg);
 }
 .slider-bg-image.bg-banner1 {
-  background-image: url(../images/bg/main-banner-bg.png);
+  background-image: url(..../Images/bg/main-banner-bg.png);
   background-size: unset;
 }
 .slider-bg-image.bg-banner2 {
-  background-image: url(../images/bg/main-banner-bg-2.png);
+  background-image: url(..../Images/bg/main-banner-bg-2.png);
 }
 .slider-bg-image.slider-bg-shape {
   position: relative;
