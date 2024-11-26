@@ -20,7 +20,7 @@
 
     <title> Agents </title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'agents/images/logo/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{MEDIA_URL}}images/logo/favicon.png">
     <!-- CSS ============================================ -->
     <link rel="stylesheet" href="{% static 'agents/css/vendor/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'agents/css/plugins/fontawesome-all.min.css' %}">
@@ -61,7 +61,7 @@
                                 <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
                                 <div class="logo">
                                     <a href="index.php"> <!-- Replace 'index' with the correct URL name from your urls.py -->
-                                        <img class="logo-light" src="{% static 'agents/images/logo/logo.png' %}" alt="ChatBot Logo">
+                                        <img class="logo-light" src="{{MEDIA_URL}}images/logo/logo.png" alt="ChatBot Logo">
                                     </a>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
                         
                                                     <div class="col-lg-3 single-mega-item">
                                                         <div class="header-menu-img">
-                                                            <img src="{% static 'agents/images/menu-img/menu-img-2.png' %}" alt="Menu Split Image"> <!-- Updated static path -->
+                                                            <img src="{{MEDIA_URL}}images/menu-img/menu-img-2.png" alt="Menu Split Image"> <!-- Updated static path -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -327,7 +327,7 @@
                                         <a class="d-flex align-items-center" href="#">
                                             <div class="inner d-flex align-items-center">
                                                 <div class="img-box">
-                                                    <img src="{% static 'agents/images/team/team-01sm.jpg' %}" alt="Admin"> <!-- Updated image path -->
+                                                    <img src="{{MEDIA_URL}}images/team/team-01sm.jpg" alt="Admin"> <!-- Updated image path -->
                                                 </div>
                                                 <div class="content">
                                                     <span class="title">Adam Milner</span>
@@ -343,7 +343,7 @@
                                         <div class="inner">
                                             <div class="rbt-admin-profile">
                                                 <div class="admin-thumbnail">
-                                                    <img src="{% static 'agents/images/team/team-01sm.jpg' %}" alt="User Images"> <!-- Updated image path -->
+                                                    <img src="{{MEDIA_URL}}images/team/team-01sm.jpg" alt="User Images"> <!-- Updated image path -->
                                                 </div>
                                                 <div class="admin-info">
                                                     <span class="name">Adam Milner</span>
@@ -441,7 +441,7 @@
                     <div class="header-top">
                         <div class="logo">
                             <a href="home"> <!-- Updated URL -->
-                                <img class="logo-light" src="{% static 'agents/images/logo/logo.png' %}" alt="ChatBot Logo"> <!-- Updated image path -->
+                                <img class="logo-light" src="{{MEDIA_URL}}images/logo/logo.png" alt="ChatBot Logo"> <!-- Updated image path -->
                             </a>
                         </div>
                         <div class="close-menu">
@@ -578,7 +578,7 @@
             
                                             <div class="col-lg-3 single-mega-item">
                                                 <div class="header-menu-img">
-                                                    <img src="{% static 'agents/images/menu-img/menu-img-2.png' %}" alt="Menu Split Image"> <!-- Updated image path -->
+                                                    <img src="{{MEDIA_URL}}images/menu-img/menu-img-2.png" alt="Menu Split Image"> <!-- Updated image path -->
                                                 </div>
                                             </div>
                                         </div>
@@ -598,13 +598,13 @@
                                 </ul>
                                 <div class="rbt-sm-separator"></div>
                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                    <li><a href="text_generator"><img src="{% static 'agents/images/generator-icon/text.png ' %}" alt="AI Generator"><span>Text Generator</span></a></li>
-                                    <li><a href="image_generator"><img src="{% static 'agents/images/generator-icon/photo.png ' %}" alt="AI Generator"><span>Image Generator</span><div class="rainbow-badge-card badge-sm ml--10">Hot</div></a></li>
-                                    <li><a href="code_generator"><img src="{% static 'agents/images/generator-icon/code-editor.png ' %}" alt="AI Generator"><span>Code Generator</span></a></li>
-                                    <li><a href="image_editor"><img src="{% static 'agents/images/generator-icon/photo.png' %}" alt="AI Generator"><span>Image Editor</span></a></li>
-                                    <li><a href="video_generator"><img src="{% static 'agents/images/generator-icon/video-camera.png' %}" alt="AI Generator"><span>Video Generator</span></a></li>
-                                    <li><a href="email_generator"><img src="{% static 'agents/images/generator-icon/email.png' %}" alt="AI Generator"><span>Email Generator</span></a></li>
-                                    <li><a tabindex="-1" class="disabled" aria-disabled="true" role="button"><img src="{% static 'images/generator-icon/website-design.png' %}" alt="AI Generator"><span>Website Generator</span></a></li>
+                                    <li><a href="text_generator"><img src="{{MEDIA_URL}}images/generator-icon/text.png " alt="AI Generator"><span>Text Generator</span></a></li>
+                                    <li><a href="image_generator"><img src="{{MEDIA_URL}}images/generator-icon/photo.png " alt="AI Generator"><span>Image Generator</span><div class="rainbow-badge-card badge-sm ml--10">Hot</div></a></li>
+                                    <li><a href="code_generator"><img src="{{MEDIA_URL}}images/generator-icon/code-editor.png " alt="AI Generator"><span>Code Generator</span></a></li>
+                                    <li><a href="image_editor"><img src="{{MEDIA_URL}}images/generator-icon/photo.png" alt="AI Generator"><span>Image Editor</span></a></li>
+                                    <li><a href="video_generator"><img src="{{MEDIA_URL}}images/generator-icon/video-camera.png" alt="AI Generator"><span>Video Generator</span></a></li>
+                                    <li><a href="email_generator"><img src="{{MEDIA_URL}}images/generator-icon/email.png" alt="AI Generator"><span>Email Generator</span></a></li>
+                                    <li><a tabindex="-1" class="disabled" aria-disabled="true" role="button"><img src="{{MEDIA_URL}}generator-icon/website-design.png" alt="AI Generator"><span>Website Generator</span></a></li>
                                 </ul>
                             </nav>
             
@@ -660,15 +660,15 @@
                             <div class="rbt-default-sidebar-wrapper">
                                 <nav class="mainmenu-nav">
                                     <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                        <li><a href="text_generator"><img src="{% static 'agents/images/generator-icon/text.png' %}" alt="AI Generator"><span>Text Generator</span></a></li>
-                                        <li><a href="image_generator"><img src="{% static 'agents/images/generator-icon/photo.png' %}" alt="AI Generator"><span>Image Generator</span>
+                                        <li><a href="text_generator"><img src="{{MEDIA_URL}}images/generator-icon/text.png" alt="AI Generator"><span>Text Generator</span></a></li>
+                                        <li><a href="image_generator"><img src="{{MEDIA_URL}}images/generator-icon/photo.png" alt="AI Generator"><span>Image Generator</span>
                                             <div class="rainbow-badge-card badge-sm ml--10">NEW</div>
                                         </a></li>
-                                        <li><a href="code_generator"><img src="{% static 'agents/images/generator-icon/code-editor.png' %}" alt="AI Generator"><span>Code Generator</span></a></li>
-                                        <li><a href="image_editor"><img src="{% static 'agents/images/generator-icon/photo.png' %}" alt="AI Generator"><span>Image Editor</span></a></li>
-                                        <li><a href="video_generator"><img src="{% static 'agents/images/generator-icon/video-camera.png' %}" alt="AI Generator"><span>Video Generator</span></a></li>
-                                        <li><a href="email_generator"><img src="{% static 'agents/images/generator-icon/email.png' %}" alt="AI Generator"><span>Email Generator</span></a></li>
-                                        <li><a tabindex="-1" class="disabled" aria-disabled="true"><img src="{% static 'agents/images/generator-icon/website-design.png' %}" alt="AI Generator"><span>Website Generator</span>
+                                        <li><a href="code_generator"><img src="{{MEDIA_URL}}images/generator-icon/code-editor.png" alt="AI Generator"><span>Code Generator</span></a></li>
+                                        <li><a href="image_editor"><img src="{{MEDIA_URL}}images/generator-icon/photo.png" alt="AI Generator"><span>Image Editor</span></a></li>
+                                        <li><a href="video_generator"><img src="{{MEDIA_URL}}images/generator-icon/video-camera.png" alt="AI Generator"><span>Video Generator</span></a></li>
+                                        <li><a href="email_generator"><img src="{{MEDIA_URL}}images/generator-icon/email.png" alt="AI Generator"><span>Email Generator</span></a></li>
+                                        <li><a tabindex="-1" class="disabled" aria-disabled="true"><img src="{{MEDIA_URL}}images/generator-icon/website-design.png" alt="AI Generator"><span>Website Generator</span>
                                             <div class="rainbow-badge-card badge-sm ml--10">PRO</div>
                                         </a></li>
                                     </ul>
@@ -741,7 +741,7 @@
                         <div class="inner">
                             <a href="profile_details" class="autor-info">
                                 <div class="author-img active">
-                                    <img class="w-100" src="{% static 'agents/images/team/team-01sm.jpg ' %}" alt="Author">
+                                    <img class="w-100" src="{{MEDIA_URL}}images/team/team-01sm.jpg " alt="Author">
                                 </div>
                                 <div class="author-desc">
                                     <h6>Adam Milner</h6>
@@ -755,7 +755,7 @@
                             </form>
                         </div>
                     </div>
-                    <p class="subscription-copyright copyright-text text-center b3 small-text">© 2024 <a href="https://themeforest.net/user/pixcelsthemes">Intellabiz</a>.</p>
+                    <p class="subscription-copyright copyright-text text-center b3 small-text">© 2024 <a href="{% url 'home' %}">Intellabiz</a>.</p>
                 </div>
             </div>
             
@@ -773,7 +773,7 @@
                                 <div class="chat-top-bar">
                                     <div class="section-title">
                                         <div class="icon">
-                                            <img src="{% static 'agents/images/icons/document-file.png' %}" alt="">
+                                            <img src="{{MEDIA_URL}}images/icons/document-file.png" alt="">
                                         </div>
                                         <h6 class="title">Website roadmap title write me</h6>
                                     </div>

@@ -21,6 +21,7 @@ import stripe
 import threading
 import io
 import sys
+import docker
 from django.utils import timezone
 from accounts.models import UserProfile
 
@@ -294,6 +295,8 @@ class WorkflowRunner(threading.Thread):
         self.agent = agent
         self.conversation = conversation
         self._stop_event = threading.Event()
+        self.docker_client = docker.from_env()
+        self.container = None
 
     def stop(self):
         self._stop_event.set()
@@ -303,6 +306,9 @@ class WorkflowRunner(threading.Thread):
         if not workflow:
             return
 
+        # Ensure the container is set up for the agent
+        self.ensure_container()
+
         # Run the Bash command if it exists
         if workflow.bash_command:
             self.run_bash(workflow.bash_command)
@@ -311,40 +317,75 @@ class WorkflowRunner(threading.Thread):
         if workflow.python_code_snippet:
             self.run_python(workflow.python_code_snippet)
 
-    def run_bash(self, bash_command):
-        """Run the bash command in a separate environment."""
+    def ensure_container(self):
+        """Create or fetch the Docker container for the agent."""
+        if self.agent.container_id:
+            # Try to fetch the existing container
+            try:
+                self.container = self.docker_client.containers.get(self.agent.container_id)
+                return
+            except docker.errors.NotFound:
+                print(f"Container {self.agent.container_id} not found. Creating a new one.")
+        
+        # Create a new container
         try:
-            result = subprocess.run(bash_command, shell=True, capture_output=True, text=True)
-            if result.returncode == 0:
-                output = result.stdout
+            self.container = self.docker_client.containers.run(
+                image="python:3.10-slim",
+                name=f"workflow_container_{self.agent.id}",
+                detach=True,
+                tty=True,
+            )
+            # Save the container ID to the agent model
+            self.agent.container_id = self.container.id
+            self.agent.save()
+        except docker.errors.APIError as e:
+            print(f"Error creating Docker container: {e}")
+            raise
+
+    def run_bash(self, bash_command):
+        """Run a Bash command inside the Docker container."""
+        try:
+            result = self.container.exec_run(f"bash -c '{bash_command}'", stdout=True, stderr=True)
+            output = result.output.decode("utf-8")
+            if result.exit_code == 0:
                 send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Bash Output: {output}")
             else:
-                error = result.stderr
-                send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Bash Error: {error}")
-        except subprocess.CalledProcessError as e:
-            send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Error executing bash: {str(e)}")
+                send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Bash Error: {output}")
+        except Exception as e:
+            send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Error running Bash: {str(e)}")
 
     def run_python(self, python_code_snippet):
-        """Run the Python code snippet."""
-        # Capture output using StringIO to redirect print statements
-        output_buffer = io.StringIO()
-        original_stdout = sys.stdout
-        sys.stdout = output_buffer
-
+        """Run Python code inside the Docker container."""
+        script_path = "/tmp/script.py"
         try:
-            # Execute the code snippet
-            exec(python_code_snippet)
+            # Copy the Python script into the container
+            with open("temp_script.py", "w") as f:
+                f.write(python_code_snippet)
+
+            with open("temp_script.py", "rb") as f:
+                self.container.put_archive("/tmp/", f.read())
+
+            # Execute the script
+            result = self.container.exec_run(f"python {script_path}", stdout=True, stderr=True)
+            output = result.output.decode("utf-8")
+
+            if result.exit_code == 0:
+                send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Python Output: {output}")
+            else:
+                send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Python Error: {output}")
         except Exception as e:
-            send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Python Error: {str(e)}")
-        finally:
-            sys.stdout = original_stdout
+            send_message_to_chat(self.conversation, sender_agent=self.agent, message=f"Error running Python: {str(e)}")
 
-        # Send captured output to chat
-        output = output_buffer.getvalue()
-        if output:
-            send_message_to_chat(self.conversation, sender_agent=self.agent, message=output)
-
-        output_buffer.close()
+    def cleanup(self):
+        """Stop and remove the Docker container."""
+        if self.container:
+            try:
+                self.container.stop()
+                self.container.remove()
+                self.agent.container_id = None
+                self.agent.save()
+            except docker.errors.APIError as e:
+                print(f"Error cleaning up Docker container: {e}")
 
 
 

@@ -51,7 +51,7 @@ class Agent(models.Model):
     workflow = models.OneToOneField(Workflow, on_delete=models.SET_NULL, null=True, blank=True)
     history = models.ManyToManyField(Conversation, blank=True, related_name='agent_conversations')
     description = models.TextField(null=True, blank=True)
-    
+    container_id = models.CharField(max_length=255, null=True, blank=True)  # Add container ID field
 
     def __str__(self):
         return f"Agent: {self.name} - {self.id}"
