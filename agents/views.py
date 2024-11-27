@@ -71,6 +71,7 @@ def agent(request, pk):
     
     return render(request, 'agents/agent.html', {
         'agent': agent,
+        'MEDIA_URL': settings.MEDIA_URL,
         'conversation_id': str(conversation.id) if conversation else None
     })
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import SignUpForm, LoginForm
-
+from django.conf import settings
 
 def sign_up(request):
     if request.method == 'POST':
@@ -12,7 +12,7 @@ def sign_up(request):
             return redirect('home')
     else:
         form = SignUpForm()
-    return render(request, 'accounts/signup.html', {'form': form})
+    return render(request, 'accounts/signup.html', {'form': form, 'MEDIA_URL': settings.MEDIA_URL})
 
 def log_in(request):
     if request.method == 'POST':
@@ -23,12 +23,12 @@ def log_in(request):
             return redirect('home')
     else:
         form = LoginForm()
-    return render(request, 'accounts/signin.html', {'form': form})
+    return render(request, 'accounts/signin.html', {'form': form, 'MEDIA_URL': settings.MEDIA_URL})
 
 def log_out(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
-    return render(request, 'accounts/log_out.html')
+    return render(request, 'accounts/log_out.html', {'MEDIA_URL': settings.MEDIA_URL})
 
 
