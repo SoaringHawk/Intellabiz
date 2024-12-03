@@ -110,57 +110,18 @@
                                 </div>
                                 <div class="signup-box-footer">
                                     <div class="bottom-text">
-                                        Do you have an account? <a class="btn-read-more ml--5" href="signin.php"><span>Sign In</span></a>
+                                        Do you have an account? <a class="btn-read-more ml--5" href="{% url 'log_in' %}"><span>Sign In</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 right-wrapper">
-                        <div class="client-feedback-area">
-                            <div class="single-feedback">
-                                <div class="inner">
-                                    <div class="meta-img-section">
-                                        <a class="image" href="#">
-                                            <img src="{{MEDIA_URL}}images/team/team-02sm.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="rating">
-                                        <a href="#rating">
-                                            <i class="fa-sharp fa-solid fa-star"></i>
-                                        </a>
-                                        <a href="#rating">
-                                            <i class="fa-sharp fa-solid fa-star"></i>
-                                        </a>
-                                        <a href="#rating">
-                                            <i class="fa-sharp fa-solid fa-star"></i>
-                                        </a>
-                                        <a href="#rating">
-                                            <i class="fa-sharp fa-solid fa-star"></i>
-                                        </a>
-                                        <a href="#rating">
-                                            <i class="fa-sharp fa-solid fa-star"></i>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <p class="description">Pixcels-Themes is now a crucial component of our work! We made it simple to collaborate across departments by grouping our work</p>
-                                        <div class="bottom-content">
-                                            <div class="meta-info-section">
-                                                <h4 class="title-text mb--0">Guy Hawkins</h4>
-                                                <p class="desc mb--20">Nursing Assistant</p>
-                                                <div class="desc-img">
-                                                    <img src="{{MEDIA_URL}}images/brand/brand-t.png" alt="Brand Image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="{{MEDIA_URL}}images/split/colab.png" alt="Brand Image">
                     </div>
                 </div>
             </div>
-            <a class="close-button" href="index.php">
+            <a class="close-button" href="{% url 'home' %}">
                 <i class="fa-sharp fa-regular fa-x"></i>
             </a>
         </div>

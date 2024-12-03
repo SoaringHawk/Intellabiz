@@ -20,4 +20,9 @@ urlpatterns = [
     path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
     path('subscription/success/', views.subscription_success, name='subscription_success'),
     path('subscription/cancel/', views.cancel_view, name='cancel_view'),
+    path('pricing/', views.pricing, name='pricing'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('terms-policy/', views.terms_policy, name='terms_policy'),
+    path('help/', views.help_faq, name='help'),
+    path('contact/', views.contact, name='contact'),
 ]

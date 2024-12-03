@@ -597,3 +597,70 @@ def subscription_success(request):
         user_profile.save()
 
     return render(request, 'success.html')
+
+def pricing(request):
+    pricing_plans = [
+        {
+            'id': 1,
+            'name': 'Basic',
+            'price': '29',
+            'billing_period': 'Per Month',
+            'features': [
+                {'name': 'Video Duration', 'included': True, 'value': '1-Min Max Duration'},
+                {'name': 'Video Templates', 'included': True, 'value': '400+'},
+                {'name': 'Stock Elements', 'included': False},
+                # Add more features
+            ]
+        },
+        # Add more plans
+    ]
+    
+    comparison_features = [
+        {'name': 'Video Duration', 'type': 'text', 'values': ['1-Min Max', '5-Min Max', '20-Min Max', '60-Min Max']},
+        {'name': 'Video Templates', 'type': 'text', 'values': ['400+', '400+', '400+', '400+']},
+        {'name': 'Stock Elements', 'type': 'boolean', 'values': [False, False, True, True]},
+        # Add more comparison features
+    ]
+    
+    context = {
+        'pricing_plans': pricing_plans,
+        'comparison_features': comparison_features,
+    }
+    
+    return render(request, 'agents/pricing.html', context)
+
+def privacy_policy(request):
+    return render(request, 'agents/privacy_policy.html', {
+        'MEDIA_URL': settings.MEDIA_URL,
+    })
+
+def terms_policy(request):
+    return render(request, 'agents/term-policy.html', {
+        'MEDIA_URL': settings.MEDIA_URL,
+    })
+
+def help_faq(request):
+    # You could add FAQ data to the context if you want to make it dynamic
+    faq_items = [
+        {
+            'id': 'One',
+            'question': 'What is Intellabiz?',
+            'answer': 'Intellabiz is an AI-driven messaging platform that adeptly communicates with users using natural language understanding.'
+        },
+        # Add more FAQ items as needed
+    ]
+    
+    return render(request, 'agents/help.html', {
+        'MEDIA_URL': settings.MEDIA_URL,
+        'faq_items': faq_items
+    })
+
+def contact(request):
+    if request.method == 'POST':
+        # Handle form submission here
+        # You might want to add email sending functionality
+        pass
+    
+    return render(request, 'agents/contact.html', {
+        'MEDIA_URL': settings.MEDIA_URL,
+    })
